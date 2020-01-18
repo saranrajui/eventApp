@@ -1,0 +1,72 @@
+<div class="add-event-wrapper">
+    <div class="add-event-header">
+        <h5 class="dialog-headline">Add Event
+            <span>
+                <mat-icon class="pull-right close-icon" (click)="onCloseDialog()">close</mat-icon>
+            </span>
+        </h5>
+
+    </div>
+    <div class="container">
+        <div class="add-event-content row">        
+        <form name="createEvent" [formGroup]="form" (ngSubmit)="submit()">
+            
+            <div class="col-10 form-top">
+                <!-- <div class="title">
+                    <h5>Create Event</h5>
+                </div> -->
+                <div class="form-content">
+                    <div class="tab-content">
+                        <div class="content-container tab-content-height">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <mat-form-field>
+                                        <input matInput name="org_fname" formControlName="org_fname" placeholder="Organizer First Name">
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field>
+                                        <input matInput formControlName="org_lname" placeholder="Organizer Last Name">
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field>
+                                        <input matInput formControlName="company" placeholder="Enter Company Name">
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field>
+                                        <textarea matInput formControlName="about" placeholder="About the event">
+                                        </textarea>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field>
+                                        <input matInput [matDatepicker]="picker"  formControlName="scheduled_at" placeholder="Choose a date">
+                                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                        <mat-datepicker #picker></mat-datepicker>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field>
+                                        <input matInput formControlName="duration" placeholder="Event Duration">
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field>
+                                        <input matInput formControlName="capacity" placeholder="Capacity">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="form-action">
+                                <button type="submit" mat-raised-button color="primary" title="Add Event" (click)="onAddEventSubmit()">Add Event</button>
+                             </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>

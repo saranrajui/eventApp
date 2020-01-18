@@ -1,0 +1,115 @@
+<!-- DATA TABLE-->
+<section class="p-t-20">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="title-5 m-b-35">User's List</h3>
+                <div class="table-data__tool ">
+                    <div class="table-data__tool-left d-none">
+                        <div class="rs-select2--light rs-select2--md">
+                            <select class="js-select2" name="property">
+                                <option selected="selected">All Properties</option>
+                                <option value="">Option 1</option>
+                                <option value="">Option 2</option>
+                            </select>
+                            <div class="dropDownSelect2"></div>
+                        </div>
+                        <div class="rs-select2--light rs-select2--sm">
+                            <select class="js-select2" name="time">
+                                <option selected="selected">Today</option>
+                                <option value="">3 Days</option>
+                                <option value="">1 Week</option>
+                            </select>
+                            <div class="dropDownSelect2"></div>
+                        </div>
+                        <button class="au-btn-filter">
+                            <i class="zmdi zmdi-filter-list"></i>filters</button>
+                    </div>
+                    <div class="table-data__tool-right">
+                        <button class="au-btn au-btn-icon au-btn--green au-btn--small" (click)="createEvent($event)">
+                            <i class="zmdi zmdi-plus"></i>add Event</button>
+                        <div class="rs-select2--dark rs-select2--sm rs-select2--dark2 d-none">
+                            <select class="js-select2" name="type">
+                                <option selected="selected">Export</option>
+                                <option value="">Option 1</option>
+                                <option value="">Option 2</option>
+                            </select>
+                            <div class="dropDownSelect2"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-container mat-elevation-z8">
+                    <table 
+                    mat-table 
+                    #gridtable 
+                    [dataSource]="dataSource" 
+                    matSort 
+                    aria-label="Elements"
+                    matSortActive="name" 
+                    class="mat-table mat-elevation-z8 col-lg-12">
+
+                        <ng-container matColumnDef="name">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+                            <td mat-cell *matCellDef="let user" data-label="name">
+                                {{user.name}}
+                            </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="age">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header>Age</th>
+                            <td mat-cell *matCellDef="let user" data-label="age">
+                                {{user.age}}
+                            </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="phone">
+                            <th mat-header-cell *matHeaderCellDef class="w30">Phone</th>
+                            <td mat-cell *matCellDef="let user" data-label="phone">
+                                {{user.phone}}
+                            </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="email">
+                            <th mat-header-cell *matHeaderCellDef class="w30">Email</th>
+                            <td mat-cell *matCellDef="let user" data-label="email">
+                                {{user.email}}
+                            </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="company">
+                            <th mat-header-cell *matHeaderCellDef class="w30">Company</th>
+                            <td mat-cell *matCellDef="let user">
+                                {{user.company}}
+                            </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="action">
+                            <th mat-header-cell *matHeaderCellDef></th>
+                            <td mat-cell *matCellDef="let element">
+                                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Delete User">
+                                    <mat-icon>more_vert</mat-icon>
+                                </button>
+                                <mat-menu #menu="matMenu">
+                                    <button mat-menu-item (click)="deleteBooking(element, $event)">
+                                        <mat-icon>delete</mat-icon>
+                                        <span>Delete</span>
+                                    </button>
+                                    <button mat-menu-item (click)="locateInCalendar(element, $event)">
+                                        <mat-icon>directions</mat-icon>
+                                        <span>Locate on Calendar</span>
+                                    </button>
+                                </mat-menu>
+                            </td>
+                        </ng-container>
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                        
+                    </table>
+                    <mat-paginator [length]="dataSource.length" [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END DATA TABLE-->
