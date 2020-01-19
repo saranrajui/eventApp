@@ -1,0 +1,314 @@
+[
+  {
+    "_id": "5c540cb4d1e88f219439d0bd",
+    "organizer": {
+      "first": "Jamie",
+      "last": "Guy"
+    },
+    "company": "ORGANICA",
+    "about": "Nisi pariatur amet velit qui nostrud aliquip qui consectetur adipisicing proident. Aute do tempor veniam minim commodo id minim in nostrud minim excepteur consequat mollit. Laborum id adipisicing laborum aliquip nostrud. Officia ipsum officia nostrud proident sunt dolor veniam reprehenderit laborum commodo quis. Laboris magna cillum commodo amet labore sint. Adipisicing in enim amet laboris et nostrud aute aute. Duis anim magna esse cupidatat nisi id consectetur.",
+    "scheduled_at": "Monday, January 20, 2020 10:23 AM",
+    "duration": 3,
+    "capacity": 80,
+	"isToggled": true
+  },
+  {
+    "_id": "5c540cb41c3f7ba1b57461e9",
+    "organizer": {
+      "first": "Jamie",
+      "last": "Guy"
+    },
+    "company": "ORBIN",
+    "about": "Irure sunt non dolore laborum. Veniam do deserunt veniam quis exercitation proident aliquip laborum mollit laboris culpa. Nulla amet qui ipsum cupidatat laborum cillum do ea ullamco elit quis sit. Sint consectetur duis et deserunt esse in laborum labore. Labore officia cupidatat quis ad anim amet. Ipsum et commodo quis nulla deserunt tempor magna cillum eu adipisicing pariatur consectetur. Incididunt quis aliquip consectetur mollit minim do eu sit.",
+    "scheduled_at": "Wednesday, January 22, 2020 10:35 AM",
+    "duration": 4,
+    "capacity": 68,
+	"isToggled": true
+  },
+  {
+    "_id": "5c540cb4753ef92e33ce4f97",
+    "organizer": {
+      "first": "Nash",
+      "last": "Mcintyre"
+    },
+    "company": "ZILLACOM",
+    "about": "Consectetur dolor fugiat amet duis. Deserunt proident pariatur laborum duis tempor. Duis sunt laboris exercitation sunt labore laboris aliquip irure ex ea fugiat nisi dolor proident. Anim enim tempor amet culpa et in esse amet est cupidatat.",
+    "scheduled_at": "Monday, January 28, 2020 4:55 PM",
+    "duration": 2,
+    "capacity": 57,
+	"isToggled": false
+  },
+  {
+    "_id": "5c540cb422d4c98e0bcb9f16",
+    "organizer": {
+      "first": "Castaneda",
+      "last": "Dodson"
+    },
+    "company": "BOILICON",
+    "about": "Occaecat laboris eu culpa tempor anim. Nisi eu ullamco incididunt cillum consequat laboris. Deserunt nisi occaecat elit ex enim cupidatat et est id nostrud. Ipsum non incididunt sit labore culpa adipisicing deserunt fugiat eiusmod. Commodo esse voluptate ipsum voluptate pariatur tempor ad labore esse consequat qui consequat fugiat.",
+    "scheduled_at": "Thursday, January 10, 2020 1:49 AM",
+    "duration": 4,
+    "capacity": 90,
+	"isToggled": true
+  },
+  {
+    "_id": "5c540cb4fd2c33cfb65bdd2b",
+    "organizer": {
+      "first": "Diana",
+      "last": "Love"
+    },
+    "company": "ECRATER",
+    "about": "Non irure labore duis amet ad ea consequat id laboris. Cupidatat reprehenderit nulla dolore id consectetur reprehenderit. Elit officia est nisi et non cillum qui ipsum fugiat deserunt Lorem quis officia. Commodo ipsum excepteur irure laboris labore. Ea nostrud aute nulla in consequat sunt consectetur adipisicing ea. Cillum ea minim nostrud aute Lorem velit veniam et dolor adipisicing pariatur veniam.",
+    "scheduled_at": "Saturday, January 19, 2020 12:09 AM",
+    "duration": 3,
+    "capacity": 83,
+	"isToggled": false
+  },
+  {
+    "_id": "5c540cb425112104a9040929",
+    "organizer": {
+      "first": "Austin",
+      "last": "Parrish"
+    },
+    "company": "ZUVY",
+    "about": "Dolor nulla mollit mollit enim dolore nisi do consectetur aute irure commodo incididunt non ea. Laborum est quis dolore pariatur eu ad ut aliqua Lorem id ad. Ullamco ullamco duis elit amet. Sunt eiusmod aliqua deserunt tempor dolor sit minim mollit nulla. Excepteur velit ullamco laborum officia. Nulla id ut sunt in excepteur. Exercitation sit commodo culpa incididunt pariatur ut Lorem veniam nulla Lorem labore.",
+    "scheduled_at": "Friday, January 11, 2020 3:25 PM",
+    "duration": 2,
+    "capacity": 81,
+	"isToggled": true
+  },
+  {
+    "_id": "5c540cb41b3143e6a651dc30",
+    "organizer": {
+      "first": "Rhonda",
+      "last": "Farmer"
+    },
+    "company": "TSUNAMIA",
+    "about": "Consequat quis officia Lorem velit laboris sit ea reprehenderit. Aliquip do elit magna nulla occaecat commodo minim adipisicing ex sint ut ut tempor laboris. Adipisicing nisi eiusmod quis nisi pariatur eu. Nulla Lorem aliquip qui ipsum reprehenderit laboris do non. Qui ad sunt nostrud aliquip sint velit id dolor sint. Nisi deserunt culpa cupidatat nisi id dolore sit. Eiusmod cillum exercitation incididunt esse commodo incididunt dolore est in eiusmod reprehenderit incididunt.",
+    "scheduled_at": "Friday, January 18, 2020 8:36 PM",
+    "duration": 3,
+    "capacity": 87,
+	"isToggled": false
+  },
+  {
+    "_id": "5c540cb4337db22c312a048c",
+    "organizer": {
+      "first": "Marisa",
+      "last": "Montgomery"
+    },
+    "company": "UBERLUX",
+    "about": "Esse fugiat id ex ut consequat adipisicing eu enim minim. Excepteur culpa ad anim ex laboris ea ipsum voluptate. In reprehenderit pariatur magna fugiat in. Tempor consectetur Lorem nisi proident cillum aliquip excepteur ipsum.",
+    "scheduled_at": "Monday, January 21, 2020 1:34 PM",
+    "duration": 4,
+    "capacity": 67,
+	"isToggled": true
+  },
+  {
+    "_id": "5c540cb4c76a33b4e7cff6c5",
+    "organizer": {
+      "first": "Pat",
+      "last": "Golden"
+    },
+    "company": "UNIA",
+    "about": "Occaecat Lorem eiusmod sunt aute nostrud fugiat non ad sunt deserunt culpa. Esse veniam eiusmod minim elit dolore consequat minim eiusmod excepteur ex aute magna duis labore. Adipisicing ullamco adipisicing aliqua irure anim amet cillum voluptate reprehenderit nulla. Ipsum minim fugiat aute aute. Ullamco cillum est esse exercitation esse et commodo sit in fugiat sunt eiusmod Lorem reprehenderit. Sunt minim irure nisi et labore minim exercitation qui minim eu.",
+    "scheduled_at": "Monday, January 28, 2020 11:29 PM",
+    "duration": 2,
+    "capacity": 90,
+	"isToggled": true
+  },
+  {
+    "_id": "5c540cb4be47682e9ad3f775",
+    "organizer": {
+      "first": "Noemi",
+      "last": "Melendez"
+    },
+    "company": "MEDICROIX",
+    "about": "Adipisicing aliquip ad elit consectetur cupidatat. Irure cillum officia ut laborum amet quis. Ullamco tempor sit ex pariatur veniam sint. Magna aliqua dolore et ea culpa anim sint aute aliquip sit magna velit non sunt.",
+    "scheduled_at": "Friday, January 11, 2020 11:43 PM",
+    "duration": 4,
+    "capacity": 86,
+	"isToggled": true
+  },
+  {
+    "_id": "5c540cb4b594c929ec1024f8",
+    "organizer": {
+      "first": "Knapp",
+      "last": "Dixon"
+    },
+    "company": "ZANYMAX",
+    "about": "Enim laborum occaecat ipsum commodo commodo dolor duis ullamco tempor incididunt consequat quis. Anim eu eiusmod esse amet dolore culpa ullamco laborum Lorem anim sunt. Culpa commodo tempor non magna magna anim. Eiusmod amet consequat occaecat aliqua labore ipsum veniam velit proident incididunt incididunt aliquip.",
+    "scheduled_at": "Friday, January 18, 2020 9:14 AM",
+    "duration": 2,
+    "capacity": 65,
+	"isToggled": false
+  },
+  {
+    "_id": "5c540cb4b3bbb50aa32fff00",
+    "organizer": {
+      "first": "Samantha",
+      "last": "Thomas"
+    },
+    "company": "ANACHO",
+    "about": "Dolore anim aute cillum Lorem velit. Sint mollit sit cupidatat excepteur ad. Est aliquip sit mollit ipsum laborum dolor consectetur esse labore exercitation aliquip cillum duis. Aliqua proident adipisicing eiusmod commodo labore occaecat anim occaecat tempor qui voluptate deserunt. Anim mollit dolore incididunt exercitation aliqua. Velit exercitation et sint consequat dolor amet adipisicing anim. Sit aliquip excepteur commodo cillum sint nulla do sunt commodo do aliqua.",
+    "scheduled_at": "Thursday, January 24, 2020 2:05 PM",
+    "duration": 3,
+    "capacity": 92,
+	"isToggled": false
+  },
+  {
+    "_id": "5c540cb433d403390b3a4731",
+    "organizer": {
+      "first": "Lydia",
+      "last": "Blake"
+    },
+    "company": "SULFAX",
+    "about": "Lorem aute veniam ad dolor laborum occaecat ipsum nostrud eiusmod in esse ex sint. Consectetur deserunt duis ad est elit nisi incididunt do adipisicing. Et eiusmod tempor amet aliqua reprehenderit magna. Est culpa Lorem et deserunt sit et pariatur laboris. Ipsum sit amet ad ad proident aute nulla dolor incididunt.",
+    "scheduled_at": "Saturday, January 19, 2020 12:45 PM",
+    "duration": 3,
+    "capacity": 52,
+	"isToggled": false
+  },
+  {
+    "_id": "5c540cb42de47db2f515e03c",
+    "organizer": {
+      "first": "Hogan",
+      "last": "Vinson"
+    },
+    "company": "KONNECT",
+    "about": "Nulla aute veniam non aute in. Laboris cupidatat Lorem commodo duis officia dolore aliquip minim qui velit excepteur nostrud ex non. Irure laborum esse duis veniam minim est labore et. Nostrud deserunt labore aliquip officia amet commodo. Veniam esse eu anim nulla quis ut deserunt elit culpa et. Non velit id ut dolor enim nostrud ullamco mollit pariatur.",
+    "scheduled_at": "Sunday, January 20, 2020 3:27 AM",
+    "duration": 2,
+    "capacity": 97,
+	"isToggled": false
+  },
+  {
+    "_id": "5c540cb492d2edc3d660ee6c",
+    "organizer": {
+      "first": "Witt",
+      "last": "Gilliam"
+    },
+    "company": "ZIZZLE",
+    "about": "Elit dolore elit adipisicing culpa fugiat anim non reprehenderit magna est. Incididunt nisi sit labore aliquip culpa. Minim commodo aliqua excepteur minim sunt do nostrud mollit et. Eu ex amet eiusmod officia eiusmod laborum culpa dolore aliqua ex qui aute commodo quis. Veniam eu adipisicing dolore sint excepteur elit minim sunt ex. Et occaecat exercitation nulla occaecat. Quis ex amet id sint ipsum commodo nostrud elit veniam proident.",
+    "scheduled_at": "Saturday, January 5, 2020 6:13 PM",
+    "duration": 2,
+    "capacity": 68,
+	"isToggled": false
+  },
+  {
+    "_id": "5c540cb4545efc0fa38be776",
+    "organizer": {
+      "first": "Cummings",
+      "last": "Warner"
+    },
+    "company": "COLUMELLA",
+    "about": "Nostrud esse eiusmod sint nulla. Culpa sit Lorem aliqua non consequat. Enim nulla laboris incididunt labore. Labore dolore proident nisi et irure eiusmod voluptate et magna ipsum mollit in sunt. Ullamco elit reprehenderit ad do irure.",
+    "scheduled_at": "Tuesday, January 29, 2020 4:09 AM",
+    "duration": 2,
+    "capacity": 58,
+	"isToggled": false
+  },
+  {
+    "_id": "5c540cb4340dfff2b8e0b147",
+    "organizer": {
+      "first": "Tabitha",
+      "last": "Bentley"
+    },
+    "company": "SLUMBERIA",
+    "about": "Aliquip commodo proident incididunt minim excepteur id commodo magna fugiat minim eu. Officia incididunt laborum nulla Lorem deserunt duis ipsum aute id commodo nisi. Est nostrud duis deserunt reprehenderit anim enim aute commodo. Dolor ut amet ipsum et duis amet ex esse eu magna eu. Aute quis anim dolore velit deserunt cillum officia duis ullamco consectetur. Sint ullamco Lorem ut ea elit cillum nisi mollit magna voluptate consectetur id dolor nostrud. Voluptate do do exercitation occaecat anim do nisi sint cillum excepteur fugiat duis ea.",
+    "scheduled_at": "Friday, January 18, 2020 1:48 AM",
+    "duration": 3,
+    "capacity": 69,
+	"isToggled": false
+  },
+  {
+    "_id": "5c540cb45c564d2917df203d",
+    "organizer": {
+      "first": "Nolan",
+      "last": "Best"
+    },
+    "company": "KOFFEE",
+    "about": "Laborum non elit non Lorem id mollit laboris. Occaecat pariatur ad nisi dolore aute do mollit aliqua labore sunt minim nulla commodo. In Lorem anim nisi magna reprehenderit non irure tempor qui dolore pariatur. Labore ullamco excepteur duis reprehenderit veniam est nostrud dolore consequat ex commodo ut consectetur. Exercitation officia ad duis consectetur irure dolore cupidatat dolore. Magna id dolore nulla laboris et laboris eu excepteur ad eu commodo.",
+    "scheduled_at": "Tuesday, January 15, 2020 12:52 AM",
+    "duration": 3,
+    "capacity": 55,
+	"isToggled": false
+  },
+  {
+    "_id": "5c540cb4113d028e476590b0",
+    "organizer": {
+      "first": "Simpson",
+      "last": "Bond"
+    },
+    "company": "OMATOM",
+    "about": "Ut consectetur cupidatat commodo dolore velit aliqua magna enim sit minim non occaecat esse mollit. Sit eiusmod in culpa ipsum nostrud aliqua magna pariatur deserunt. Qui reprehenderit laboris minim eiusmod aute in pariatur cupidatat id magna ut nostrud ad.",
+    "scheduled_at": "Sunday, January 6, 2020 8:28 AM",
+    "duration": 2,
+    "capacity": 74,
+	"isToggled": false
+  },
+  {
+    "_id": "5c540cb468919575505ce33f",
+    "organizer": {
+      "first": "Sheree",
+      "last": "Mcleod"
+    },
+    "company": "ORBEAN",
+    "about": "Nisi elit consequat ex cupidatat ea elit sit quis fugiat aute. In deserunt deserunt do commodo exercitation nisi veniam excepteur minim sint cillum labore elit. Ex quis nisi velit elit nisi.",
+    "scheduled_at": "Monday, January 21, 2020 2:38 PM",
+    "duration": 3,
+    "capacity": 77,
+	"isToggled": false
+  },
+  {
+    "_id": "5c540cb4bedce76e8a3e12f6",
+    "organizer": {
+      "first": "Franklin",
+      "last": "Coleman"
+    },
+    "company": "NURPLEX",
+    "about": "Irure qui ex sunt quis. Voluptate et cillum aliqua deserunt ex commodo elit qui duis aliquip quis veniam ut. Duis sunt mollit occaecat sit nisi nostrud eiusmod id deserunt voluptate. Officia veniam pariatur mollit ad reprehenderit veniam Lorem pariatur esse excepteur. Lorem eiusmod Lorem sit officia laborum veniam consequat ad tempor est anim. Voluptate ut minim aliqua ad est laborum aliqua ad aliquip voluptate tempor.",
+    "scheduled_at": "Saturday, January 5, 2020 1:05 PM",
+    "duration": 2,
+    "capacity": 76,
+	"isToggled": false
+  },
+  {
+    "_id": "5c540cb4fa1e7a59a223b547",
+    "organizer": {
+      "first": "Tessa",
+      "last": "Leonard"
+    },
+    "company": "PORTICO",
+    "about": "Labore qui nulla irure aute. Lorem veniam elit adipisicing anim officia elit ad ut cillum ipsum nulla ullamco. Duis ipsum ullamco tempor labore esse sunt culpa et excepteur Lorem aliquip.",
+    "scheduled_at": "Tuesday, January 15, 2020 12:46 PM",
+    "duration": 4,
+    "capacity": 70,
+	"isToggled": false
+  },
+  {
+    "_id": "5c540cb4bf41ec1b61e8e1f8",
+    "organizer": {
+      "first": "Daniels",
+      "last": "Lang"
+    },
+    "company": "COLLAIRE",
+    "about": "Enim amet elit amet ad fugiat sunt nostrud exercitation id commodo Lorem laborum ipsum non. Nostrud eu pariatur duis minim laboris. Esse amet officia ullamco incididunt enim. Consequat exercitation et sint eu cupidatat sit eiusmod fugiat incididunt reprehenderit proident sit laborum. In nisi irure est adipisicing nulla ut dolore elit proident.",
+    "scheduled_at": "Friday, January 11, 2020 10:08 AM",
+    "duration": 3,
+    "capacity": 94,
+	"isToggled": false
+  },
+  {
+    "_id": "5c540cb4702b523d29af0458",
+    "organizer": {
+      "first": "Enid",
+      "last": "Chase"
+    },
+    "company": "SUNCLIPSE",
+    "about": "Et ad nostrud et eiusmod et voluptate eiusmod labore amet ad irure laborum mollit reprehenderit. Mollit eiusmod aute aliqua Lorem. Velit ad laborum irure excepteur nulla ea id amet. Occaecat commodo ex magna deserunt adipisicing quis irure excepteur minim consectetur anim.",
+    "scheduled_at": "Monday, January 21, 2020 10:29 PM",
+    "duration": 3,
+    "capacity": 98,
+	"isToggled": false
+  }
+]

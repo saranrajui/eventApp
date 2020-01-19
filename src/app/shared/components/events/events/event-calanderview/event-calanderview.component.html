@@ -1,20 +1,18 @@
-<!-- <p>event-calanderview works!</p> -->
+<div class="container">
+  <div class="col-10">
+    <div class='app'>
 
-<div id="calendar" class="building-calendar"></div>
+       <div class='app-calendar'>
+        <full-calendar 
+          #calendar
+          defaultView="dayGridMonth" 
+          [header]="options" 
+          [plugins]="calendarPlugins" 
+          [weekends]="calendarWeekends" 
+          [events]="calendarEvents"
+          (dateClick)="handleDateClick($event)"></full-calendar>
+      </div>
 
-
-<div class='app-calendar' *ngIf="calendarVisible">
-    <full-calendar
-      #calendar
-      defaultView="dayGridMonth"
-      [header]="{
-        left: 'prev,next today',
-        center: 'title',
-        right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
-      }"
-      [plugins]="calendarPlugins"
-      [weekends]="calendarWeekends"
-      [events]="calendarEvents"
-      (dateClick)="handleDateClick($event)"
-    ></full-calendar>
+    </div>
   </div>
+</div>

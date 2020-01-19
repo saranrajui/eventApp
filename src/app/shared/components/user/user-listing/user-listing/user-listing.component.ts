@@ -69,7 +69,8 @@ export class UserListingComponent implements OnInit {
   getUserList = () => {
     this._sharedService.showLoader(true);
     console.log('get user list triggered');
-    this._http.get('https://next.json-generator.com/api/json/get/NyNrlJTX8')
+    // this._http.get('https://next.json-generator.com/api/json/get/NyNrlJTX8')
+    this._http.getJSON('userlist')
     .subscribe ((result: User | any) => {
       console.log(result);
       result.forEach((user, index) => {
@@ -100,10 +101,7 @@ export class UserListingComponent implements OnInit {
     localStorage.setItem( 'data', JSON.stringify(userList));
   }
 
-  locateInCalendar = (element, event: Event | any) => {
-    // events-calander
-    this._router.navigateByUrl('/events-calander');
-  }
+
   renderView = ( data ) => {
     let dataToStore;
     console.log('rendering View');

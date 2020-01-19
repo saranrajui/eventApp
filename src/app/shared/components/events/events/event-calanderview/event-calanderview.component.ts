@@ -1,11 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { HttpService } from 'src/app/core/services/http.service.js';
 import { Calendar } from '@fullcalendar/core';
-import { FullCalendarModule } from '@fullcalendar/angular';
+import { FullCalendarModule, FullCalendarComponent } from '@fullcalendar/angular';
 import dayGridPlugin from '@fullcalendar/daygrid';
-import {  } from '@fullcalendar/interaction'
-
+import { sharedService } from 'src/app/shared/services/shared.service';
+import { EventInput } from '@fullcalendar/core';
+import timeGrigPlugin from '@fullcalendar/timegrid';
+import interactionPlugin from '@fullcalendar/interaction'; // for dateClick
+import { User } from 'src/app/shared/model/userlist.model';
+import { EventObj } from 'src/app/shared/model/eventlist.model';
+import { Router, ActivatedRoute } from '@angular/router';
+import { CreateEventComponent } from '../../../create-event/create-event.component';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-event-calanderview',
@@ -14,14 +21,20 @@ import {  } from '@fullcalendar/interaction'
   providers: [FormBuilder]
 })
 export class EventCalanderviewComponent implements OnInit {
-  calendarEvents = [];
+  @ViewChild('calendar', {static : true }) calendarComponent: FullCalendarComponent; // the #calendar in the template
+
   public FullCalendar;
   public selectViewForm: FormGroup;
-
+  public currentUser;
   constructor(
     private formBuilder: FormBuilder,
     private _https: HttpService,
-  ) { }
+    private _router: ActivatedRoute ,
+    private _sharedService: sharedService,
+    public dialog: MatDialog,
+  ) {
+    this.currentUser = this._router.snapshot.paramMap.get('user');
+  }
 
   ngOnInit() {
     this.selectViewForm = this.formBuilder.group({
@@ -32,11 +45,86 @@ export class EventCalanderviewComponent implements OnInit {
     // retrive it
     // build event list
     // render it into calander
+    // get the event data where user coming from
+    // add more details for comments
+    this.getScheduledEventList(this.currentUser);
+  }
+  options = {
+    left: 'prev,next today',
+    center: 'title',
+    right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+  };
 
+  calendarVisible = true;
+  calendarPlugins = [
+    dayGridPlugin,
+    timeGrigPlugin,
+    interactionPlugin
+  ];
+  calendarWeekends = true;
+
+  calendarEvents: EventInput[] = [
+    { title: 'Event Now', start: new Date() }
+  ];
+
+  toggleVisible() {
+    this.calendarVisible = !this.calendarVisible;
   }
 
+  toggleWeekends() {
+    this.calendarWeekends = !this.calendarWeekends;
+  }
+
+  gotoPast() {
+    let calendarApi = this.calendarComponent.getApi();
+    calendarApi.gotoDate('2000-01-01'); // call a method on the Calendar object
+  }
+
+  handleDateClick(arg) {
+    const dialogRef = this.dialog.open(CreateEventComponent, {
+      height: '400px',
+      width: '800px',
+      disableClose: true
+    });
+    // if (confirm('Would you like to add an event to ' + arg.dateStr + ' ?')) {
+    //   this.calendarEvents = this.calendarEvents.concat({ // add new event data. must create new array
+    //     title: 'New Event',
+    //     start: arg.date,
+    //     allDay: arg.allDay
+    //   })
+    // }
+  }
+  getScheduledEventList = (userName: any) => {
+    const tempArr = [];
+    this._https.getJSON('eventlist')
+    .subscribe((eventList: EventObj[]) => {
+      eventList.forEach(event => {
+        Object.keys(event).forEach(key=>{
+          console.log(`${key} : ${event[key]}`);
+          if ( key == 'organizer' ) {
+            if ( userName == event[key]["first"] + ' ' + event[key]["last"] ) {
+              console.log('User Matched');
+              // push the date to caledar event list
+              tempArr.push({ title: event['company'], start: new Date(event['scheduled_at']) });
+            }
+          } else {
+            console.log('No Event assigned')
+          }
+       });
+      });
+    },
+    (error) => {
+
+    },
+    () => {
+      this.calendarEvents = [];
+      this.calendarEvents = tempArr;
+    })
+    
+  }
   getEventList = () => {
     this.renderCalanderView();
+    this._sharedService.showLoader(false);
   }
 
   renderCalanderView = () => {

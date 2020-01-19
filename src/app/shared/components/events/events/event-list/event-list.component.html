@@ -86,13 +86,16 @@
                                     <span style="position: absolute; top: 0.5em;"
                                     [ngStyle]="{'left': progress + '%'}">{{event.capacity}}%</span>
                                   </div>
-                                
                             </td>
                         </ng-container>
 
                         <ng-container matColumnDef="action">
-                            <th mat-header-cell *matHeaderCellDef></th>
-                            <td mat-cell *matCellDef="let element">                                
+                            <th mat-header-cell *matHeaderCellDef>Toggle Display</th>
+                            <td mat-cell *matCellDef="let element">
+                                <mat-slide-toggle
+                                [checked]="element.isToggled"
+                                (change)="isToggle($event)">
+                                </mat-slide-toggle>
                             </td>
                         </ng-container>
                         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

@@ -30,6 +30,9 @@ import { User } from 'src/app/shared/model/userlist.model';
       return this._http.get ( URL, expandedHeaders);
     }
 
+    public getJSON = (fileName: string): Observable<any> => {
+      return this._http.get(`../../../assets/json/${fileName}.json`);
+    }
     /**
      * HTTP Post call
      * @param  {string} url

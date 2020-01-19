@@ -94,7 +94,7 @@
                                         <mat-icon>delete</mat-icon>
                                         <span>Delete</span>
                                     </button>
-                                    <button mat-menu-item (click)="locateInCalendar(element, $event)">
+                                    <button mat-menu-item [routerLink]="['/events-calander',{user: element.name}]" routerLinkActive="router-link-active" >
                                         <mat-icon>directions</mat-icon>
                                         <span>Locate on Calendar</span>
                                     </button>

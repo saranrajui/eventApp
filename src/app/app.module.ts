@@ -20,6 +20,8 @@ import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
 import { sharedService } from './shared/services/shared.service';
+import { FullCalendarModule } from '@fullcalendar/angular'; // for FullCalendar!
+
 
 const appRoute: Routes = [
   { path: '', component: UserListingComponent },
@@ -69,6 +71,7 @@ const appRoute: Routes = [
     MatSelectModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    FullCalendarModule,
     RouterModule.forRoot(appRoute)
   ],
   providers: [
