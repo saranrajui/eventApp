@@ -1,5 +1,5 @@
 export class EventObj {
-    public Id: string;
+    public Id: string; 
     public organizer: string;
     public about: string;
     public company: string;
@@ -7,6 +7,7 @@ export class EventObj {
     public duration: number;
     public capacity: number;
     public isToggled: boolean;
+    public isMe: boolean;
 
     constructor(data: any = {}) {
         this.Id = data.Id ? data.Id : ``;
@@ -17,6 +18,7 @@ export class EventObj {
         this.duration = data.duration ? data.duration : 1;
         this.capacity = data.capacity ? data.capacity : 50;
         this.isToggled = data.isToggled ? data.isToggled : false;
+        this.isMe = data.isMe ? data.isMe : false;
 
     }
 }

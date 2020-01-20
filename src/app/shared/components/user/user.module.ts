@@ -7,7 +7,6 @@ import { HttpService } from 'src/app/core/services/http.service';
 import { MatTableModule, MatIconModule, MatMenuModule,
          MatDialogModule, MatButtonModule, MatSortModule, MatPaginatorModule } from '@angular/material';
 import { DeletealertComponent } from '../deletealert/deletealert.component';
-import { CreateEventComponent } from '../events/events/create-event/create-event.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
@@ -33,7 +32,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   ],
   entryComponents:[
     DeletealertComponent,
-    CreateEventComponent,
 ]
 })
 export class UserModule { }

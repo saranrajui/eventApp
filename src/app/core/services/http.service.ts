@@ -10,6 +10,7 @@ import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/take';
 import { environment } from 'src/environments/environment';
 import { User } from 'src/app/shared/model/userlist.model';
+import { EventObj } from 'src/app/shared/model/eventlist.model';
 
 
 @Injectable({
@@ -53,13 +54,13 @@ import { User } from 'src/app/shared/model/userlist.model';
       .catch(this.handleError);
     }
 
-    public deleteFromStore = (record: User, collection: User[] | any): Observable<any> => {
+    public deleteFromStore = (record: User): Observable<any> => {
       let updatedCollection: User[];
       if ( record ) {
+        const collection = JSON.parse(localStorage.getItem('data'));
         for ( let index = 0; index < collection.length; index++ ) {
           if ( collection[index].Id === record.Id ) {
             collection.splice ( index, 1);
-            // assign the updated collection
             updatedCollection = collection;
           }
         }
@@ -70,6 +71,25 @@ import { User } from 'src/app/shared/model/userlist.model';
 
     }
 
+    public putEventDataToStore = (key: string, data: any) => {
+      let ExistingCollection;
+      // tslint:disable-next-line: no-unused-expression
+      return new Promise ((resolve, reject) => {
+        if (data) {
+        const isDataPresent = localStorage.getItem(key);
+        if ( isDataPresent ) {
+          ExistingCollection = JSON.parse(localStorage.getItem(key));
+          ExistingCollection.push(data[0]);
+          localStorage.setItem(key, this.IsJSON(data) || Array.isArray(data) ? JSON.stringify(ExistingCollection) : data );
+        } else {
+          localStorage.setItem(key, this.IsJSON(data) || Array.isArray(data) ? JSON.stringify(data) : data);
+        }
+        resolve(data);
+      } else {
+        reject();
+      }
+    });
+    }
 
     /**
      * @param  {HttpErrorResponse} error

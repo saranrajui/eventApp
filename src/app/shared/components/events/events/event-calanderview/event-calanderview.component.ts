@@ -80,20 +80,37 @@ export class EventCalanderviewComponent implements OnInit {
     calendarApi.gotoDate('2000-01-01'); // call a method on the Calendar object
   }
 
+  renderEvents = (events) => {
+    console.log('rendering New Evevnt');
+    setTimeout(() => {
+      this.calendarEvents = [];
+      this.calendarEvents = events ? events : new Date();
+    }, 1500);
+  }
+
   handleDateClick(arg) {
     const dialogRef = this.dialog.open(CreateEventComponent, {
       height: '400px',
       width: '800px',
-      disableClose: true
-    });
-    // if (confirm('Would you like to add an event to ' + arg.dateStr + ' ?')) {
-    //   this.calendarEvents = this.calendarEvents.concat({ // add new event data. must create new array
-    //     title: 'New Event',
-    //     start: arg.date,
-    //     allDay: arg.allDay
-    //   })
-    // }
+      disableClose: true,
+      data: { arg: arg, d : this.calendarEvents },
+    }).afterClosed().subscribe((events) => {
+      console.log(events);
+      this.renderEvents ( events );
+    })
   }
+
+  handleDateClick1(arg) {
+    var d = window.prompt('Would you like to add an event to ' + arg.dateStr + ' ?')
+    if (d) {
+      this.calendarEvents = this.calendarEvents.concat({ // add new event data. must create new array
+        title: d,
+        start: arg.date,
+        allDay: arg.allDay
+      })
+    }
+  }
+
   getScheduledEventList = (userName: any) => {
     const tempArr = [];
     this._https.getJSON('eventlist')
@@ -103,9 +120,13 @@ export class EventCalanderviewComponent implements OnInit {
           console.log(`${key} : ${event[key]}`);
           if ( key == 'organizer' ) {
             if ( userName == event[key]["first"] + ' ' + event[key]["last"] ) {
-              console.log('User Matched');
               // push the date to caledar event list
-              tempArr.push({ title: event['company'], start: new Date(event['scheduled_at']) });
+              this.calendarEvents = this.calendarEvents.concat({ // add new event data. must create new array
+                title: event['company'],
+                start: new Date(event['scheduled_at']),
+                allDay: true
+              })
+              // tempArr.push({ title: event['company'], start: new Date(event['scheduled_at']) });
             }
           } else {
             console.log('No Event assigned')
@@ -117,10 +138,10 @@ export class EventCalanderviewComponent implements OnInit {
 
     },
     () => {
-      this.calendarEvents = [];
-      this.calendarEvents = tempArr;
+     
+      // this.calendarEvents = [];
+      // this.calendarEvents = tempArr;
     })
-    
   }
   getEventList = () => {
     this.renderCalanderView();

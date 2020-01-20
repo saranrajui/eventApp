@@ -7,7 +7,7 @@ export const UserRoutes: Routes = [
         path: '', pathMatch: 'full', redirectTo: 'user-list',
     },
     {
-        path: 'user-list', component: UserListingComponent
+        path: 'user-list', component: UserListingComponent, data : { breadCrumb : 'User List'}
     }
 ];
 export const UserRoute: ModuleWithProviders = RouterModule.forRoot(UserRoutes);

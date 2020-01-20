@@ -20,10 +20,10 @@ export class DeletealertComponent implements OnInit {
   }
 
   onConfirm = (): void => {
-    this.dialogRef.close(true);
+    this.dialogRef.close({isConfirm : true});
   }
 
-  onCancel(): void {
-    this.dialogRef.close(true);
+  onCancel(): any {
+    this.dialogRef.close({isConfirm : false});
   }
 }

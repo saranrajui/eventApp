@@ -19,7 +19,7 @@ export class UserListingComponent implements OnInit {
   name: string;
   age: number;
   compnany: string;
-  allUser = [];
+  allUser = []; 
   dataSource = new MatTableDataSource();
   @ViewChild(MatSort, {static: true}) sort: MatSort;
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
@@ -31,21 +31,28 @@ export class UserListingComponent implements OnInit {
     private _router: Router,
     private _sharedService: sharedService,
     public dialog: MatDialog) {
-    this.allUser = [];
-    const listFromStore = this.fetchUserList();
-    if(!listFromStore) {
-      this.getUserList ();
-    }
+    this.init();
   }
 
-
+ init = () => {
+    const listFromStore = this.fetchUserList();
+    if ( !listFromStore ) {
+      this.getUserList();
+      // this.saveUserListInStore( userList );
+      // this.renderView( listFromStore );
+    } else {
+      this.renderView( listFromStore );
+    }
+}
   ngOnInit = () => {
     console.log('ngOnInit called');
   }
   ngAfterViewInit = () => {
+    this._sharedService.showLoader(true);
     setTimeout(() => {
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
+      this._sharedService.showLoader(false);
     }, 2500);
   }
   /**
@@ -88,74 +95,76 @@ export class UserListingComponent implements OnInit {
       console.error(error);
     },
     () => {
-      console.log(this.allUser);
-      this.saveUserListInStore ( this.allUser );
-      this.dataSource.sort = this.sort;
+      // return new Promise(this.allUser);
+      // console.log(this.allUser);
+      this.saveUserListInStore( this.allUser );
+      // this.dataSource.sort = this.sort;
       this.renderView(localStorage.getItem('data'));
-      this._sharedService.showLoader(false);
+      // this._sharedService.showLoader(false);
     });
   }
 
-  saveUserListInStore = (userList: User[]) => {
+  saveUserListInStore = (userList: User[] | any) => {
     console.log('setting to store');
     localStorage.setItem( 'data', JSON.stringify(userList));
+    return true;
   }
 
 
   renderView = ( data ) => {
-    let dataToStore;
-    console.log('rendering View');
-    dataToStore = this._http.IsJSON( data ) ? JSON.parse( data ) : data;
-    this.dataSource = new MatTableDataSource(dataToStore);
+    this._sharedService.showLoader(true);
+    this.dataSource = new MatTableDataSource(this._http.IsJSON( data ) ? JSON.parse( data ) : data);
     setTimeout(() => {
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
       this._sharedService.showLoader(false);
-    }, 5000);
+     }, 2000);
   }
 
   fetchUserList = () => {
     console.log('fetching from store');
-    const list = localStorage.getItem('data');
-    if ( list ) {
-      this.renderView( list );
-      return true;
-    }
-    return false;
+    const data = localStorage.getItem('data');
+    return data ? data : false;
   }
 
 
   /**
    * @param User
    */
-  deleteBooking = (user: User) => {
+  deleteBooking = (user: User, collection: User[]) => {
+    const recordToDelete = user;
+    const recordCollection = collection;
     this.deleteAlertDataModel.title = 'Delete!';
-    this.deleteAlertDataModel.message = `Are you Sure You want to Delete the User${user.name}?`;
+    this.deleteAlertDataModel.message = `Are you Sure You want to Delete the User ${user.name}?`;
     this.deleteAlertDataModel.okButtonName = 'Yes';
     this.deleteAlertDataModel.cancelButtonName = 'No';
     const dialogRef = this.dialog.open(DeletealertComponent, {
-      width: '400px',
-      height: 'auto',
+      width: '450px',
+      minHeight: '200px',
       data: this.deleteAlertDataModel
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        this._http.deleteFromStore( user, this.allUser )
-          .subscribe((collection: User[]) => {
+      this._sharedService.showLoader(true);
+      if (result && result['isConfirm']) {
+        this._http.deleteFromStore( recordToDelete )
+          .subscribe(( updatedCollection: User[]) => {
+            if (updatedCollection) {
             try {
-              // this._sharedService.displayLoader(false);
               // re render the grid
-              this.renderView( collection );
+              console.log('rendering in subscribe of delete no');
+              this.saveUserListInStore (updatedCollection);
+              this.renderView( updatedCollection );
             } catch (err) {
               throw err;
+            }
             }
           },
             (err) => {
               console.log(err);
             },
             () => {
-              // this._sharedService.displayLoader(false);
+              this._sharedService.showLoader(false);
             });
       }
     });

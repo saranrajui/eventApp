@@ -5,60 +5,24 @@
     <app-header></app-header>
     <!-- END HEADER DESKTOP-->
     
-     <!-- PAGE CONTENT-->
-     <div class="page-content--bgf7">
-           <!-- BREADCRUMB-->
-           <section class="au-breadcrumb2">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="au-breadcrumb-content">
-                            <div class="au-breadcrumb-left">
-                                <span class="au-breadcrumb-span">You are here:</span>
-                                <ul class="list-unstyled list-inline au-breadcrumb__list">
-                                    <li class="list-inline-item active">
-                                        <a href="#">Home</a>
-                                    </li>
-                                    <li class="list-inline-item seprate">
-                                        <span>/</span>
-                                    </li>
-                                    <li class="list-inline-item">Dashboard</li>
-                                </ul>
-                            </div>
-                            <form class="au-form-icon--sm" action="" method="post">
-                                <input class="au-input--w300 au-input--style2" type="text" placeholder="Search for datas &amp; reports...">
-                                <button class="au-btn--submit2" type="submit">
-                                    <i class="zmdi zmdi-search"></i>
-                                </button>
-                            </form>
-                        </div>
-                    </div>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <app-sidenav></app-sidenav>
+        </div>
+        <!-- PAGE CONTENT-->
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid">
+                    <h1 class="mt-4">Dashboard</h1>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item active">Home / {{breadCrumb}}</li>
+                    </ol>
+                    <router-outlet>
+                    </router-outlet>
                 </div>
-            </div>
-            </section>
-        <!-- END BREADCRUMB-->
-        
-        <!-- WELCOME-->
-        <section class="welcome p-t-10 d-none">
-            <div class="container">
-                <div class="row">
-                    <div id="chart_1" class="chart-container">
-                    </div>
-                    <div class="col-md-12">
-                        <h1 class="title-4">Welcome back
-                            <span>John!</span>
-                        </h1>
-                        <hr class="line-seprate">
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- END WELCOME-->
-
-        <!-- ROUTER OUTLET START  -->
-        <router-outlet>
-        </router-outlet>
-        <!-- ROUTER OUTLET ENDS  -->
-
-     </div>
-    
+            </main>
+            <app-footer>
+            </app-footer>
+        </div>
+    </div>
+     

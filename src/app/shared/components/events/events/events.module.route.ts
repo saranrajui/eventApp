@@ -7,11 +7,12 @@ export const eventRoutes: Routes = [
     {
         path: 'event-list',
         component: EventListComponent,
-        data: { 'title': 'Event List' },
+        data: { breadCrumb: 'Event List' },
     },
     {
       path: 'events-calander',
       component: EventCalanderviewComponent,
+      data: { breadCrumb: 'Event Calander'}
     }
 ];
 export const EventRoutes = RouterModule.forRoot(eventRoutes);

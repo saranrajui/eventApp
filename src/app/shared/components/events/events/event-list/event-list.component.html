@@ -7,43 +7,19 @@
         <div class="row">
             <div class="col-md-12">
                 <h3 class="title-5 m-b-35">Event's List</h3>
-                <div class="table-data__tool d-none">
-                    <div class="table-data__tool-left">
-                        <div class="rs-select2--light rs-select2--md">
-                            <select class="js-select2" name="property">
-                                <option selected="selected">All Properties</option>
-                                <option value="">Option 1</option>
-                                <option value="">Option 2</option>
-                            </select>
-                            <div class="dropDownSelect2"></div>
-                        </div>
-                        <div class="rs-select2--light rs-select2--sm">
-                            <select class="js-select2" name="time">
-                                <option selected="selected">Today</option>
-                                <option value="">3 Days</option>
-                                <option value="">1 Week</option>
-                            </select>
-                            <div class="dropDownSelect2"></div>
-                        </div>
-                        <button class="au-btn-filter">
-                            <i class="zmdi zmdi-filter-list"></i>filters</button>
-                    </div>
-                    <div class="table-data__tool-right">
-                        <button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                            <i class="zmdi zmdi-plus"></i>add item</button>
-                        <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
-                            <select class="js-select2" name="type">
-                                <option selected="selected">Export</option>
-                                <option value="">Option 1</option>
-                                <option value="">Option 2</option>
-                            </select>
-                            <div class="dropDownSelect2"></div>
-                        </div>
-                    </div>
-                </div>
+                <button type="submit" mat-raised-button color="primary" title="Add Event"
+                [routerLink]="['/events-calander']"
+                class="pull-right"
+                routerLinkActive="router-link-active">Add Event</button>
                 <div class="table-container mat-elevation-z8">
-                    <table mat-table #gridtable [dataSource]="dataSource" matSort aria-label="Elements"
-                        matSortActive="name" class="mat-table mat-elevation-z8 col-lg-12">
+                    <table 
+                    mat-table 
+                    #gridtable_1 
+                    [dataSource]="dataSource" 
+                    matSort 
+                    aria-label="Elements"
+                    matSortActive="name" 
+                    class="mat-table mat-elevation-z8 col-lg-12">
 
                         <ng-container matColumnDef="organizer">
                             <th mat-header-cell *matHeaderCellDef mat-sort-header width="12.222%">Organizer</th>
@@ -90,7 +66,7 @@
                         </ng-container>
 
                         <ng-container matColumnDef="action">
-                            <th mat-header-cell *matHeaderCellDef>Toggle Display</th>
+                            <th mat-header-cell *matHeaderCellDef>Filter</th>
                             <td mat-cell *matCellDef="let element">
                                 <mat-slide-toggle
                                 [checked]="element.isToggled"
@@ -101,7 +77,7 @@
                         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
                     </table>
-                    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+                    <mat-paginator [length]="dataSource.length" [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
 
                 </div>
             </div>

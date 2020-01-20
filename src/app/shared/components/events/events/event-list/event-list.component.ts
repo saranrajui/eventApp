@@ -22,6 +22,7 @@ export class EventListComponent implements OnInit {
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   dataSource = new MatTableDataSource();
+  
   public displayedColumns: string[] = [
     'organizer',
     'company',
@@ -98,9 +99,13 @@ export class EventListComponent implements OnInit {
   }
 
   renderView = (data) => {
-    console.log('rendering View');
-    this.dataSource = new MatTableDataSource(JSON.parse(data));
-    this._sharedService.showLoader(false);
+    this._sharedService.showLoader(true);
+    this.dataSource = new MatTableDataSource(this._http.IsJSON( data ) ? JSON.parse( data ) : data);
+    setTimeout(() => {
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+      this._sharedService.showLoader(false);
+     }, 2000);
 
   }
 

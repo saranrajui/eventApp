@@ -20,7 +20,9 @@ import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
 import { sharedService } from './shared/services/shared.service';
-import { FullCalendarModule } from '@fullcalendar/angular'; // for FullCalendar!
+import { FullCalendarModule } from '@fullcalendar/angular';
+import { SidenavComponent } from './shared/components/sidenav/sidenav.component';
+import { FooterComponent } from './shared/components/footer/footer.component'; // for FullCalendar!
 
 
 const appRoute: Routes = [
@@ -50,6 +52,8 @@ const appRoute: Routes = [
     HeaderComponent,
     DeletealertComponent,
     CreateEventComponent,
+    SidenavComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
