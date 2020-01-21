@@ -10,7 +10,8 @@ import { Router, Route } from '@angular/router';
 import { FullCalendarComponent } from '@fullcalendar/angular';
 import { EventInput } from '@fullcalendar/core';
 import { EventCalanderviewComponent } from '../events/events/event-calanderview/event-calanderview.component';
-import { EventEmitter } from 'protractor';
+import { AppConstant } from 'src/app/app.constants';
+import { sharedService } from '../../services/shared.service';
 
 @Component({
   selector: 'app-create-event',
@@ -22,13 +23,14 @@ export class CreateEventComponent implements OnInit {
     modalData;
     stores;
     addEventModel = new EventObj();
-    @ViewChild('calanderView', { static : true}) EventCalanderviewComponent: EventCalanderviewComponent;
     @ViewChild('calendar', {static : true }) calendarComponent: FullCalendarComponent; // the #calendar in the template
 
   constructor(
     private _http: HttpService,
     private formBuilder: FormBuilder,
     private _router: Router,
+    private _appconstant: AppConstant,
+    private _sharedService: sharedService,
     private dialogRef: MatDialogRef<CreateEventComponent>,
     @Inject(MAT_DIALOG_DATA) public data: CreateEventComponent
   ) { 
@@ -67,6 +69,8 @@ export class CreateEventComponent implements OnInit {
     this._http.putEventDataToStore('event-data', eventArray)
     .then(response => {
       this.renderEvents ( response );
+      this._sharedService.openSnackBar(this._appconstant.EVENT_CREATED_MSG);
+      
     },
     (error) => {
       console.log(error);

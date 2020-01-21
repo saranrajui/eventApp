@@ -13,7 +13,7 @@ import { EventsModule } from './shared/components/events/events/events.module';
 import { HttpService } from '../app/core/services/http.service';
 import { HttpClientModule } from '@angular/common/http';
 import { MatIconModule, MatDialogModule, MatTabsModule, MatOptionModule, 
-  MatSelectModule, MatDatepickerModule, MatNativeDateModule, MatButtonModule, MatProgressSpinner, MatProgressBarModule, MatSpinner, MatProgressSpinnerModule } from '@angular/material';
+  MatSelectModule, MatDatepickerModule, MatNativeDateModule, MatButtonModule, MatProgressSpinner, MatProgressBarModule, MatSpinner, MatProgressSpinnerModule, MatSnackBar, MAT_SNACK_BAR_DATA, MatSnackBarModule } from '@angular/material';
 import { DeletealertComponent } from './shared/components/deletealert/deletealert.component';
 import { CreateEventComponent } from './shared/components/create-event/create-event.component';
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -22,7 +22,8 @@ import {MatTableModule} from '@angular/material/table';
 import { sharedService } from './shared/services/shared.service';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { SidenavComponent } from './shared/components/sidenav/sidenav.component';
-import { FooterComponent } from './shared/components/footer/footer.component'; // for FullCalendar!
+import { FooterComponent } from './shared/components/footer/footer.component';
+import { SnackbarComponent } from './shared/components/snackbar/snackbar.component'; // for FullCalendar!
 
 
 const appRoute: Routes = [
@@ -54,6 +55,7 @@ const appRoute: Routes = [
     CreateEventComponent,
     SidenavComponent,
     FooterComponent,
+    SnackbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,6 +63,7 @@ const appRoute: Routes = [
     HttpClientModule,
     FormsModule,
     UserModule,
+    MatSnackBarModule,
     MatButtonModule,
     MatDatepickerModule,
     MatNativeDateModule,
@@ -81,9 +84,13 @@ const appRoute: Routes = [
   providers: [
     HttpService,
     sharedService,
-    MatNativeDateModule
+    MatNativeDateModule,
+    { provide: MAT_SNACK_BAR_DATA, useValue: {} }
   ],
   bootstrap: [AppComponent],
-  entryComponents: [CreateEventComponent]
+  entryComponents: [
+    CreateEventComponent,
+    SnackbarComponent
+  ]
 })
 export class AppModule { }

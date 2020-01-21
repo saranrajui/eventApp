@@ -7,13 +7,13 @@ import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'myApp';
+  title = 'Event Management | Home';
   breadCrumb;
   constructor( private _activatedRoute: ActivatedRoute, private _router: Router){
-    _router.events
+    this._router.events
       .filter(e => e instanceof NavigationEnd)
       .forEach(e => {
-        this.breadCrumb = _activatedRoute.root.firstChild.snapshot.data['breadCrumb'];
+        this.breadCrumb = this._activatedRoute.root.firstChild.snapshot.data['breadCrumb'];
     });
   }
   ngOnInIt() {

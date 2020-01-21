@@ -31,6 +31,9 @@ import { EventObj } from 'src/app/shared/model/eventlist.model';
       return this._http.get ( URL, expandedHeaders);
     }
 
+    /**
+     * To get resource from same workspace 
+     */
     public getJSON = (fileName: string): Observable<any> => {
       return this._http.get(`../../../assets/json/${fileName}.json`);
     }
@@ -54,6 +57,9 @@ import { EventObj } from 'src/app/shared/model/eventlist.model';
       .catch(this.handleError);
     }
 
+    /**
+     * Remove data from local store
+     */
     public deleteFromStore = (record: User): Observable<any> => {
       let updatedCollection: User[];
       if ( record ) {
@@ -71,6 +77,9 @@ import { EventObj } from 'src/app/shared/model/eventlist.model';
 
     }
 
+    /**
+     * Save Event related data to store with different use cases
+     */
     public putEventDataToStore = (key: string, data: any) => {
       let ExistingCollection;
       // tslint:disable-next-line: no-unused-expression
@@ -111,6 +120,9 @@ import { EventObj } from 'src/app/shared/model/eventlist.model';
         return { headers };
         }
 
+        /**
+         * Utility to findout the param is valid Object
+         */
       public IsJSON = ( data ) => {
         try {
             JSON.parse(data);

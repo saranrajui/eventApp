@@ -41,9 +41,6 @@ export class EventListComponent implements OnInit {
     }
   }
 
-  isToggle = (event: any) => {
-    console.log(event);
-  }
 
   ngOnInit() {
     console.log(' ngOnInit - Event List');
@@ -55,7 +52,6 @@ export class EventListComponent implements OnInit {
     }, 2500);
   }
   fetchUserList = () => {
-    console.log('fetching from store');
     const list = localStorage.getItem('event-data');
     if (list) {
       this.renderView(list);
@@ -65,7 +61,6 @@ export class EventListComponent implements OnInit {
   }
 
   getEventList = () => {
-    console.log('get Event list triggered');
     this._sharedService.showLoader(true);
     // this._http.get('https://next.json-generator.com/api/json/get/Vk7OTypQ8')
     this._http.getJSON('eventlist')
@@ -87,7 +82,6 @@ export class EventListComponent implements OnInit {
         (error) => {
           console.log(error);
           this._sharedService.showLoader(false);
-
         },
         () => {
           console.log(this.allEventList);
@@ -105,12 +99,11 @@ export class EventListComponent implements OnInit {
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
       this._sharedService.showLoader(false);
-     }, 2000);
+     }, 1000);
 
   }
 
   saveEventListInStore = (eventList: EventObj[]) => {
-    console.log('setting to store');
     localStorage.setItem('event-data', JSON.stringify(eventList));
   }
 

@@ -9,13 +9,14 @@ import { EventCalanderviewComponent } from './event-calanderview/event-calanderv
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { HttpService } from 'src/app/core/services/http.service';
 import { sharedService } from 'src/app/shared/services/shared.service';
+import { SnackbarComponent } from '../../snackbar/snackbar.component';
 
 
 
 @NgModule({
   declarations: [
     EventListComponent,
-    EventCalanderviewComponent
+    EventCalanderviewComponent,
   ],
   imports: [
     CommonModule,

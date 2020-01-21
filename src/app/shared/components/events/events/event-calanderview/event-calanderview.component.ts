@@ -12,7 +12,7 @@ import { User } from 'src/app/shared/model/userlist.model';
 import { EventObj } from 'src/app/shared/model/eventlist.model';
 import { Router, ActivatedRoute } from '@angular/router';
 import { CreateEventComponent } from '../../../create-event/create-event.component';
-import { MatDialog } from '@angular/material';
+import { MatDialog, MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-event-calanderview',
@@ -40,9 +40,6 @@ export class EventCalanderviewComponent implements OnInit {
     this.selectViewForm = this.formBuilder.group({
       view: [{ value: 'year' }],
     });
-    // check if there is event list from store
-    this.getEventList();
-    // retrive it
     // build event list
     // render it into calander
     // get the event data where user coming from
@@ -67,27 +64,20 @@ export class EventCalanderviewComponent implements OnInit {
     { title: 'Event Now', start: new Date() }
   ];
 
-  toggleVisible() {
-    this.calendarVisible = !this.calendarVisible;
-  }
-
-  toggleWeekends() {
-    this.calendarWeekends = !this.calendarWeekends;
-  }
-
-  gotoPast() {
-    let calendarApi = this.calendarComponent.getApi();
-    calendarApi.gotoDate('2000-01-01'); // call a method on the Calendar object
-  }
-
+    /**
+   * @param events[]
+   */
   renderEvents = (events) => {
-    console.log('rendering New Evevnt');
     setTimeout(() => {
       this.calendarEvents = [];
       this.calendarEvents = events ? events : new Date();
-    }, 1500);
+    }, 1000);
   }
 
+  /**
+   * 
+   * @param arg DateObj from calander
+   */
   handleDateClick(arg) {
     const dialogRef = this.dialog.open(CreateEventComponent, {
       height: '400px',
@@ -97,22 +87,10 @@ export class EventCalanderviewComponent implements OnInit {
     }).afterClosed().subscribe((events) => {
       console.log(events);
       this.renderEvents ( events );
-    })
+    });
   }
 
-  handleDateClick1(arg) {
-    var d = window.prompt('Would you like to add an event to ' + arg.dateStr + ' ?')
-    if (d) {
-      this.calendarEvents = this.calendarEvents.concat({ // add new event data. must create new array
-        title: d,
-        start: arg.date,
-        allDay: arg.allDay
-      })
-    }
-  }
-
-  getScheduledEventList = (userName: any) => {
-    const tempArr = [];
+   getScheduledEventList = (userName: any) => {
     this._https.getJSON('eventlist')
     .subscribe((eventList: EventObj[]) => {
       eventList.forEach(event => {
@@ -121,34 +99,25 @@ export class EventCalanderviewComponent implements OnInit {
           if ( key == 'organizer' ) {
             if ( userName == event[key]["first"] + ' ' + event[key]["last"] ) {
               // push the date to caledar event list
-              this.calendarEvents = this.calendarEvents.concat({ // add new event data. must create new array
+              this.calendarEvents = this.calendarEvents.concat({ 
+                // add new event data. must create new array
                 title: event['company'],
                 start: new Date(event['scheduled_at']),
                 allDay: true
-              })
-              // tempArr.push({ title: event['company'], start: new Date(event['scheduled_at']) });
+              });
             }
           } else {
-            console.log('No Event assigned')
+            console.log('No Event assigned');
           }
        });
       });
     },
     (error) => {
-
+      console.log(error);
     },
     () => {
-     
-      // this.calendarEvents = [];
-      // this.calendarEvents = tempArr;
     })
   }
-  getEventList = () => {
-    this.renderCalanderView();
-    this._sharedService.showLoader(false);
-  }
 
-  renderCalanderView = () => {
-  }
 
 }
