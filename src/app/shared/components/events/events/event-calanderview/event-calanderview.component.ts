@@ -72,6 +72,7 @@ export class EventCalanderviewComponent implements OnInit {
       this.calendarEvents = [];
       this.calendarEvents = events ? events : new Date();
     }, 1000);
+    this._sharedService.showLoader(false);
   }
 
   /**
@@ -95,7 +96,6 @@ export class EventCalanderviewComponent implements OnInit {
     .subscribe((eventList: EventObj[]) => {
       eventList.forEach(event => {
         Object.keys(event).forEach(key=>{
-          console.log(`${key} : ${event[key]}`);
           if ( key == 'organizer' ) {
             if ( userName == event[key]["first"] + ' ' + event[key]["last"] ) {
               // push the date to caledar event list
@@ -106,8 +106,6 @@ export class EventCalanderviewComponent implements OnInit {
                 allDay: true
               });
             }
-          } else {
-            console.log('No Event assigned');
           }
        });
       });
@@ -116,6 +114,7 @@ export class EventCalanderviewComponent implements OnInit {
       console.log(error);
     },
     () => {
+      this._sharedService.showLoader(false);
     })
   }
 
