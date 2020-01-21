@@ -14,9 +14,9 @@
   },
   {
     "_id": "5c540cb41c3f7ba1b57461e0",
-   "organizer": {
-      "first": "Jo",
-      "last": "Cleveland"
+    "organizer": {
+      "first": "Jamie",
+      "last": "Guy"
     },
     "company": "THE CHAMPIONSHIPS, WIMBLEDON | ORBIN",
     "about": "ALL ENGLAND LAWN TENNIS AND CROQUET CLUB MONDAY 29TH JUNE - SUNDAY 12TH JULY 2020",
@@ -25,11 +25,12 @@
     "capacity": 68,
 	"isToggled": true
   },
+
   {
     "_id": "5c540cb4d1e88f219439d0b9",
    "organizer": {
-      "first": "Jo",
-      "last": "Cleveland"
+      "first": "Wyatt",
+      "last": "Avila"
     },
     "company": "US OPEN TENNIS | ORGANICA",
     "about": "FLUSHING MEADOWS, NEW YORK MONDAY 31ST AUGUST - SUNDAY 13TH SEPTEMBER 2020",
@@ -41,14 +42,27 @@
   {
     "_id": "5c540cb4d1e88f219439d0b7",
     "organizer": {
-      "first": "Jo",
-      "last": "Cleveland"
+      "first": "Ginger",
+      "last": "Scott"
     },
     "company": "ABU DHABI GRAND PRIX| ORGANICA",
     "about": "One of the jewels in the Abu Dhabi crown is the 5.55-kilometre Yas Marina Circuit, set against a waterfront setting scenic enough to rival the likes of Monaco and Singapore.",
     "scheduled_at": "Tuesday, February 4, 2020 10:23 AM",
     "duration": 3,
     "capacity": 80,
+	"isToggled": true
+  },
+  {
+    "_id": "5c540cb41c3f7ba1b57461e0",
+    "organizer": {
+      "first": "Jamie",
+      "last": "Guy"
+    },
+    "company": "THE CHAMPIONSHIPS, WIMBLEDON | ORBIN",
+    "about": "ALL ENGLAND LAWN TENNIS AND CROQUET CLUB MONDAY 29TH JUNE - SUNDAY 12TH JULY 2020",
+    "scheduled_at": "Wednesday, January 29, 2020 10:35 AM",
+    "duration": 4,
+    "capacity": 8,
 	"isToggled": true
   },
   {
@@ -67,8 +81,8 @@
   {
     "_id": "5c540cb4d1e88f219439d0b7",
    "organizer": {
-      "first": "Jo",
-      "last": "Cleveland"
+      "first": "Karyn",
+      "last": "Barber"
     },
     "company": "ORGANICA",
     "about": "Nisi pariatur amet velit qui nostrud aliquip qui consectetur adipisicing proident. Aute do tempor veniam minim commodo id minim in nostrud minim excepteur consequat mollit. Laborum id adipisicing laborum aliquip nostrud. Officia ipsum officia nostrud proident sunt dolor veniam reprehenderit laborum commodo quis. Laboris magna cillum commodo amet labore sint. Adipisicing in enim amet laboris et nostrud aute aute. Duis anim magna esse cupidatat nisi id consectetur.",
@@ -80,14 +94,27 @@
   {
     "_id": "5c540cb4d1e88f219439d0b7",
    "organizer": {
-      "first": "Jo",
-      "last": "Cleveland"
+      "first": "Peterson",
+      "last": "Hendrix"
     },
     "company": "FRENCH OPEN | ORGANICA",
     "about": "ROLAND GARROS, PARIS    SUNDAY 24TH MAY - SUNDAY 7TH JUNE 2020",
     "scheduled_at": "Friday, January 24, 2020 10:23 AM",
     "duration": 5,
     "capacity": 70,
+	"isToggled": true
+  },
+  {
+    "_id": "5c540cb41c3f7ba1b57461e0",
+    "organizer": {
+      "first": "Jamie",
+      "last": "Guy"
+    },
+    "company": "THE CHAMPIONSHIPS, WIMBLEDON | Nokia",
+    "about": "ALL ENGLAND LAWN TENNIS AND CROQUET CLUB MONDAY 29TH JUNE - SUNDAY 12TH JULY 2020",
+    "scheduled_at": "Friday, January 24, 2020 10:35 AM",
+    "duration": 4,
+    "capacity": 68,
 	"isToggled": true
   },
   {
@@ -111,7 +138,7 @@
     },
     "company": "THE CHAMPIONSHIPS, WIMBLEDON | ORBIN",
     "about": "ALL ENGLAND LAWN TENNIS AND CROQUET CLUB MONDAY 29TH JUNE - SUNDAY 12TH JULY 2020",
-    "scheduled_at": "Wednesday, January 8, 2020 10:35 AM",
+    "scheduled_at": "Wednesday, Friday 10, 2020 10:35 AM",
     "duration": 4,
     "capacity": 68,
 	"isToggled": true
@@ -119,8 +146,8 @@
   {
     "_id": "5c540cb4d1e88f219439d0b9",
     "organizer": {
-      "first": "Valencia",
-      "last": "Vance"
+      "first": "Cantu",
+      "last": "Good"
     },
     "company": "US OPEN TENNIS | ORGANICA",
     "about": "FLUSHING MEADOWS, NEW YORK MONDAY 31ST AUGUST - SUNDAY 13TH SEPTEMBER 2020",
@@ -145,8 +172,8 @@
   {
     "_id": "5c540cb4d1e88f219439d0b7",
     "organizer": {
-      "first": "Valencia",
-      "last": "Vance"
+      "first": "Ginger",
+      "last": "Scott"
     },
     "company": "AUSTRALIAN OPEN | ORGANICA",
     "about": "MELBOURNE PARK, AUSTRALIA MONDAY 20TH JANUARY - SUNDAY 2ND FEBRUARY 2020.",
@@ -158,8 +185,8 @@
   {
     "_id": "5c540cb4d1e88f219439d0b7",
     "organizer": {
-      "first": "Valencia",
-      "last": "Vance"
+      "first": "Cathy",
+      "last": "Welch"
     },
     "company": "ORGANICA",
     "about": "Nisi pariatur amet velit qui nostrud aliquip qui consectetur adipisicing proident. Aute do tempor veniam minim commodo id minim in nostrud minim excepteur consequat mollit. Laborum id adipisicing laborum aliquip nostrud. Officia ipsum officia nostrud proident sunt dolor veniam reprehenderit laborum commodo quis. Laboris magna cillum commodo amet labore sint. Adipisicing in enim amet laboris et nostrud aute aute. Duis anim magna esse cupidatat nisi id consectetur.",
@@ -171,8 +198,8 @@
   {
     "_id": "5c540cb4d1e88f219439d0b7",
     "organizer": {
-      "first": "Valencia",
-      "last": "Vance"
+      "first": "Estella",
+      "last": "Odonnell"
     },
     "company": "FRENCH OPEN | ORGANICA",
     "about": "ROLAND GARROS, PARIS    SUNDAY 24TH MAY - SUNDAY 7TH JUNE 2020",
